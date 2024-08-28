@@ -1,7 +1,11 @@
-import React from "react";
+import { StepOneForm } from "./step-one-form";
 
 const StepOnePage = () => {
-	return <div>StepOnePage</div>;
+	return (
+		<div>
+			<StepOneForm />
+		</div>
+	);
 };
 
 export default StepOnePage;

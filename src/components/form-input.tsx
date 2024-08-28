@@ -8,6 +8,7 @@ interface FormInputProps extends InputProps {
 }
 
 export const FormInput = ({
+	id,
 	label,
 	description,
 	errorMessage,
@@ -16,15 +17,16 @@ export const FormInput = ({
 }: FormInputProps) => {
 	return (
 		<div className={className}>
-			<Label>
+			<Label htmlFor={id}>
 				{label}
 				{description && (
-					<span className="text-sm text-slate-200 block mb-1">
+					<span className="text-xs text-slate-400 block mb-1">
 						{description}
 					</span>
 				)}
 			</Label>
 			<Input
+				id={id}
 				className={errorMessage && "border-red-500"}
 				{...props}
 			/>

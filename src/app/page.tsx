@@ -8,7 +8,7 @@ const Home = () => {
 				asChild
 				size="lg"
 			>
-				<Link href="/add-pro">Multi-Page Form</Link>
+				<Link href="/add">Multi-Page Form</Link>
 			</Button>
 		</main>
 	);

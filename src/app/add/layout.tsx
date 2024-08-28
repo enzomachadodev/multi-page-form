@@ -3,7 +3,7 @@ import { StepNavigation } from "@/components/step-navigation";
 
 const DealsLayout = ({ children }: { children: React.ReactNode }) => {
 	return (
-		<div className="w-full px-2 lg:px-0">
+		<div className="w-full container pt-20 lg:pt-40">
 			<PageHeader
 				title="Share a Deal"
 				subtitle="Have an amazing deal or discount tailored for developers? Let us know!"

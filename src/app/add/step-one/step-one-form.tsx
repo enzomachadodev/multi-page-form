@@ -9,6 +9,7 @@ export const StepOneForm = () => {
 					label="Name"
 					id="name"
 					type="text"
+					minLength={2}
 					required
 				/>
 				<FormInput

@@ -27,7 +27,8 @@ export const FormInput = ({
 			</Label>
 			<Input
 				id={id}
-				className={errorMessage && "border-red-500"}
+				name={id}
+				className={errorMessage && "border-red-500 dark:border-red-500"}
 				{...props}
 			/>
 			<div className="min-h-8 mt-1">

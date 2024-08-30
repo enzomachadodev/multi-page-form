@@ -40,6 +40,7 @@ export const StepNavigation = () => {
 			{/* back button */}
 			<Link
 				href={steps[currentStep - 1]?.link || steps[0].link}
+				prefetch={false}
 				className="mb-4 flex items-center gap-2 text-xl disabled:text-white/50 lg:mb-12 lg:gap-5"
 			>
 				Back

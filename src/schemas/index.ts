@@ -37,5 +37,8 @@ export const newDealInitialValuesSchema = z.object({
 	contactEmail: z.string().optional(),
 });
 
-export type NewDealType = z.infer<typeof newDealSchema>;
+export type NewDeal = z.infer<typeof newDealSchema>;
 
+export type NewDealInitialValuesType = z.infer<
+	typeof newDealInitialValuesSchema
+>;

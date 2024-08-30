@@ -9,6 +9,7 @@ export const StepThreeForm = () => {
 					label="Contact Name"
 					id="contactName"
 					type="text"
+					minLength={5}
 					required
 				/>
 				<FormInput

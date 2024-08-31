@@ -20,7 +20,7 @@ export const StepOneForm = () => {
 		>
 			<div className="flex w-full flex-col lg:max-w-[700px]">
 				<FormInput
-					label="Name"
+					label="Product Name"
 					id="name"
 					type="text"
 					minLength={2}

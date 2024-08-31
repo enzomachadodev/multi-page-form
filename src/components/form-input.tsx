@@ -1,7 +1,9 @@
+import { useAddDealContext } from "@/contexts/addDealContext";
 import { Input, InputProps } from "./ui/input";
 import { Label } from "./ui/label";
 
 interface FormInputProps extends InputProps {
+	id: string;
 	label: string;
 	description?: string;
 	errorMessage?: string;
@@ -15,6 +17,12 @@ export const FormInput = ({
 	className,
 	...props
 }: FormInputProps) => {
+	const { updateNewDealDetails, newDealData } = useAddDealContext();
+
+	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		updateNewDealDetails({ [e.target.name]: e.target.value });
+	};
+
 	return (
 		<div className={className}>
 			<Label htmlFor={id}>
@@ -28,6 +36,8 @@ export const FormInput = ({
 			<Input
 				id={id}
 				name={id}
+				onChange={handleInputChange}
+				defaultValue={newDealData[id as keyof typeof newDealData]}
 				className={errorMessage && "border-red-500 dark:border-red-500"}
 				{...props}
 			/>

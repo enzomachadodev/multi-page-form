@@ -60,9 +60,12 @@ export const AddDealContextProvider = ({
 		localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newDealData));
 	}, [newDealData]);
 
-	const updateNewDealDetails = (dealDetails: Partial<NewDeal>) => {
-		setNewDealData((prev) => ({ ...prev, dealDetails }));
-	};
+	const updateNewDealDetails = useCallback(
+		(dealDetails: Partial<NewDeal>) => {
+			setNewDealData({ ...newDealData, ...dealDetails });
+		},
+		[newDealData]
+	);
 
 	const resetData = () => {
 		setNewDealData(defaultDeal);
@@ -75,9 +78,7 @@ export const AddDealContextProvider = ({
 	}, []);
 
 	useEffect(() => {
-		if (dataLoaded) {
-			writeToLocalStorage();
-		}
+		if (dataLoaded) return writeToLocalStorage();
 	}, [newDealData, dataLoaded, writeToLocalStorage]);
 
 	return (

@@ -1,5 +1,6 @@
 import { AddDealContextProvider } from "@/contexts/addDealContext";
 import { ThemeProvider } from "./theme-provider";
+import { Toaster } from "./ui/toaster";
 
 export const Providers = ({ children }: { children: React.ReactNode }) => {
 	return (
@@ -9,7 +10,11 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
 			enableSystem
 			disableTransitionOnChange
 		>
-			<AddDealContextProvider>{children}</AddDealContextProvider>
+			<AddDealContextProvider>
+				{children}
+				<Toaster />
+			</AddDealContextProvider>
 		</ThemeProvider>
 	);
 };
+

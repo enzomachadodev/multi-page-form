@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { AddDealRoutes } from "@/types";
 import { cn } from "@/utils/cn";
+import { ChevronLeft } from "lucide-react";
 
 const steps = [
 	{
@@ -43,7 +44,7 @@ export const StepNavigation = () => {
 				prefetch={false}
 				className="mb-4 flex items-center gap-2 text-xl disabled:text-white/50 lg:mb-12 lg:gap-5"
 			>
-				Back
+				<ChevronLeft />Back
 			</Link>
 
 			{/* list of form steps */}
